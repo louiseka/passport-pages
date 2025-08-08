@@ -17,3 +17,49 @@ body {
 h1 {
     margin: 0
 }
+
+/* Modal */
+
+.modal {
+    width: 500px;
+    height: 650px;
+    box-shadow: 0px 0px 5px #011f23;
+    background-color: red;
+    border-radius: 8px;
+    display: none;
+    position: fixed;
+    margin: auto;
+    top: 180px;
+    left: 0;
+    right: 0;
+}
+
+.inner-modal {
+    background-color: lightblue;
+    margin: 0 auto;
+    padding: 1em
+}
+
+/* Ratings */
+
+.star-rating {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.25rem;
+    border: none;
+}
+
+/* .star-rating input[type="radio"] {
+    display: none;
+} */
+
+.star-rating label {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating-filled {
+    color: #ffcc00;
+}
