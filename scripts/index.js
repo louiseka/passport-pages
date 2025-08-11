@@ -41,10 +41,8 @@ function renderCountryDetails(countryData) {
     resultSection.innerHTML = ''
 
     const exisitingPages = localStorage.getItem("passport-pages")
-
     const passportPages = !exisitingPages ? [] : JSON.parse(exisitingPages)
-
-    const countryDetailsHtml = countryData.map((country) => {
+    const countryDetailsHtml = countryData.filter((country) => country.fifa !== undefined).map((country) => {
 
         const alreadySaved = passportPages.find((passportPage) => {
             return passportPage.country === country.name.common
@@ -55,6 +53,7 @@ function renderCountryDetails(countryData) {
         const { symbol, name } = Object.values(country.currencies)[0]
 
         const addToPassportBtn = alreadySaved ? `<p>Already in your journal</p>` : `<button class="add-btn" data-add-button data-add-id="${country.fifa}"> Add to my passport </button>`
+
 
         return `
                 <div class="result-item">
@@ -71,7 +70,7 @@ function renderCountryDetails(countryData) {
                             <li>${country.name.common} is in ${country.region}</li>
                             <li>In ${country.name.common} they speak ${language}</li>
                             <li>${country.name.common} have a population of ${country.population}</li>
-                            <li>The currency is: ${name} ${symbol}</li>
+                            <li>The currency is ${name} (${symbol})</li>
                             </ul>
                         </div>
                         <div class="btn-section"> 
@@ -80,6 +79,7 @@ function renderCountryDetails(countryData) {
                 </div>
             `
     }).join('')
+
 
     resultSection.innerHTML = countryDetailsHtml
 
@@ -217,6 +217,8 @@ function renderJournalModal(countryData) {
             memories: formData.get("fav-memories")
         }
         saveToJournal(journalData)
+
+
 
     })
     formElement.querySelectorAll("input[type=radio]").forEach((radio) => {
