@@ -18,7 +18,7 @@ body {
 
 h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 h2 {
@@ -115,7 +115,7 @@ nav>ol {
 }
 
 header i {
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: #8ecae6;
 }
 
@@ -233,7 +233,6 @@ header i {
     top: 180px;
     left: 0;
     right: 0;
-    display: flex;
     flex-wrap: wrap;
 }
 
@@ -316,6 +315,10 @@ header i {
     .banner {
         gap: 10px;
         padding: 5em 5em 0
+    }
+
+    header i {
+        font-size: 3.5rem;
     }
 
     .tagline,
