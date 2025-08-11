@@ -320,6 +320,10 @@ header i {
         padding: 5em 5em 0
     }
 
+    header {
+        margin: 1em 0 4em
+    }
+
     header i {
         font-size: 3.5rem;
     }
