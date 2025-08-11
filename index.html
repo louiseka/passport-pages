@@ -17,27 +17,44 @@
 </head>
 
 <body>
-    <h1>Passport Pages</h1>
-    <a href="./journal.html">My Passport Pages</a>
-    <p>Your personal travel journal to document memories, plan future trips, and explore the world one country at a
-        time.</p>
 
-    <form>
-        <label for="search-input"> Search for your location:</label>
-        <input name="search-input" id="search-input" type="text" />
-        <button type="submit" id="search-btn">Search</button>
-    </form>
+    <nav>
+        <ol>
+            <li> <a href="./journal.html">My Passport Pages</a></li>
+        </ol>
+    </nav>
 
-    <section class="result-section" id="result-section">
+    <header>
+        <div class="banner">
+            <h1>Passport Pages</h1>
+            <i class="fa-solid fa-passport"></i>
+        </div>
+        <p class="tagline">Your personal travel journal to document the memories from your adventures.</p>
+    </header>
 
-    </section>
-    <div class="modal" id="modal">
-        <div class="inner-modal" id="inner-modal">
 
+
+    <main>
+        <form class="search-form">
+            <label for="search-input"> Search for your location:</label>
+            <div class="search-input">
+                <input name="search-input" id="search-input" type="text" />
+                <button type="submit" id="search-btn">Search</button>
+            </div>
+
+        </form>
+
+        <section class="result-section" id="result-section">
+        </section>
+
+        <div class="modal" id="modal">
+            <div class="inner-modal" id="inner-modal">
+            </div>
         </div>
 
-    </div>
+    </main>
 </body>
+
 <script type="module" src="./scripts/index.js"></script>
 
 </html>
