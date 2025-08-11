@@ -99,7 +99,7 @@ nav {
     color: #18191A;
 }
 
-nav a:visited {
+a:visited {
     color: #18191A;
 }
 
@@ -276,8 +276,6 @@ header i {
     padding: 0.5em 0;
 }
 
-
-
 /* Ratings */
 
 .star-rating {
@@ -301,6 +299,8 @@ header i {
 .star-rating-filled+label {
     color: #ffb703;
 }
+
+/* Media Queries */
 
 @media(min-width:1200px) {
     h1 {
