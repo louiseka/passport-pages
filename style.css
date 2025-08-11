@@ -18,7 +18,7 @@ body {
 
 h1 {
     margin: 0;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 h2 {
@@ -39,7 +39,7 @@ button {
     cursor: pointer;
     border: none;
     color: #18191A;
-    font-size: 1.15rem;
+    font-size: 1rem;
     background-color: #a5d5eb;
     border-radius: 5px;
     font-weight: 500;
@@ -54,8 +54,8 @@ button:hover {
 /* All buttons */
 
 .search-form button {
-    padding: 1em 3em;
-    font-size: 1.25rem;
+    padding: 0.5em 3em;
+    font-size: 1.15rem;
     font-weight: 500;
 }
 
@@ -92,7 +92,7 @@ button:hover {
 
 nav {
     display: flex;
-    justify-content: right;
+    justify-content: left;
     margin: 2em 0 1em;
     color: #18191A;
 }
@@ -109,10 +109,9 @@ nav>ol {
 
 .banner {
     display: flex;
+    gap: 8px;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 5em 5em 0
 }
 
 header i {
@@ -122,31 +121,30 @@ header i {
 
 .tagline,
 .error-message {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     text-align: center;
 }
 
 /* Search Input */
 .search-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .search-form label {
-    font-size: 1.15rem;
+    font-size: 1rem;
     margin: 1em;
 }
 
 .search-input {
     display: flex;
-    flex-direction: row;
-    gap: 5px;
+    flex-direction: column;
+    margin: 1em;
+    gap: 4px;
 }
 
 .search-input input {
-    width: 800px;
+    width: 100%;
     padding: 1em;
     font-size: 1.15rem;
 }
@@ -156,10 +154,15 @@ header i {
 .result-item,
 .journal-item {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    margin: 4em 3em 2em;
+    margin: 4em 1em 2em;
     padding: 0 0 2em;
     border-bottom: #011f23 solid 1px;
+}
+
+.img-section {
+    margin: 1em 0;
 }
 
 .result-item {
@@ -171,7 +174,8 @@ header i {
 }
 
 .journal-item {
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-section {
@@ -183,10 +187,8 @@ header i {
 
 .rating-section ul {
     list-style: none;
-    display: flex;
     align-items: center;
-    padding: 3em 0.5em 1em;
-    flex-direction: row;
+    padding: 1em 0.5em 1em;
     font-size: 0.8rem;
 }
 
@@ -231,6 +233,8 @@ header i {
     top: 180px;
     left: 0;
     right: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .inner-modal {
@@ -294,4 +298,79 @@ header i {
 
 .star-rating-filled+label {
     color: #ffb703;
+}
+
+@media(min-width:1200px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    nav {
+        justify-content: right;
+    }
+
+    button {
+        font-size: 1.15rem;
+    }
+
+    .banner {
+        gap: 10px;
+        padding: 5em 5em 0
+    }
+
+    .tagline,
+    .error-message {
+        font-size: 1.25rem;
+    }
+
+    .search-input {
+        flex-direction: row;
+    }
+
+    .search-form label {
+        font-size: 1.15rem;
+    }
+
+    .search-form button {
+        font-size: 1.25rem;
+    }
+
+    .result-item,
+    .journal-item {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 4em 3em 2em;
+        padding: 0 0 2em;
+        border-bottom: #011f23 solid 1px;
+    }
+
+    .rating-section ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 3em 0.5em 1em;
+        flex-direction: row;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width:550px) {
+    .modal {
+        width: auto;
+        margin: 1em;
+        top: 10px;
+        overflow: auto;
+    }
+
+    .inner-modal {
+        font-size: 0.8rem;
+    }
+
+    .inner-modal h2 {
+        font-size: 1.5rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+    }
 }

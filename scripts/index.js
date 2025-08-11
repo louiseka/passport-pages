@@ -4,6 +4,7 @@ const resultSection = document.getElementById("result-section")
 const modal = document.getElementById("modal")
 const innerModal = document.getElementById("inner-modal")
 
+
 function renderNoResultsMessage() {
     resultSection.innerHTML = `
         <p class="error-message">Sorry, there was an error. Please try again. </p>
@@ -21,7 +22,6 @@ const fetchCountryData = async () => {
         const res = await fetch(requestUrl)
         const data = await res.json()
         renderCountryDetails(data)
-        console.log(data)
     } catch (error) {
         //Error message for console and user
         console.error("Fetch error:", error)
@@ -43,8 +43,6 @@ function renderCountryDetails(countryData) {
     const exisitingPages = localStorage.getItem("passport-pages")
 
     const passportPages = !exisitingPages ? [] : JSON.parse(exisitingPages)
-
-
 
     const countryDetailsHtml = countryData.map((country) => {
 
@@ -84,8 +82,6 @@ function renderCountryDetails(countryData) {
     }).join('')
 
     resultSection.innerHTML = countryDetailsHtml
-
-
 
     document.querySelectorAll("[data-add-button]").forEach(button => {
         button.addEventListener("click", () => {
@@ -220,8 +216,6 @@ function renderJournalModal(countryData) {
             enjoymentRating: formData.get("joy-rating"),
             memories: formData.get("fav-memories")
         }
-
-        console.log(journalData,)
         saveToJournal(journalData)
 
     })
@@ -245,24 +239,16 @@ function highlightRatings(radioInput) {
             input.classList.remove("star-rating-filled")
         }
     })
-    console.log(siblingInputs)
 }
 
 function saveToJournal(journalData) {
 
     const exisitingPages = localStorage.getItem("passport-pages")
-
     const passportPages = !exisitingPages ? [] : JSON.parse(exisitingPages)
-
 
     passportPages.push(journalData)
     const savedPages = JSON.stringify(passportPages)
     localStorage.setItem("passport-pages", savedPages)
 
-
     modal.style.display = 'none'
 }
-
-
-
-//save to journal 
