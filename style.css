@@ -99,7 +99,8 @@ nav {
     color: #18191A;
 }
 
-a:visited {
+a:visited,
+a {
     color: #18191A;
 }
 
