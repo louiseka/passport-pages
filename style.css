@@ -57,6 +57,7 @@ button:hover {
     padding: 0.5em 3em;
     font-size: 1.15rem;
     font-weight: 500;
+    margin: 1em 0;
 }
 
 .close-btn {
@@ -336,6 +337,7 @@ header i {
 
     .search-form button {
         font-size: 1.25rem;
+        margin: 0;
     }
 
     .result-item,
